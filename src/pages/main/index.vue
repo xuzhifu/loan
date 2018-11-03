@@ -8,11 +8,11 @@
             <router-link to="/"><img src="../../assets/img/banner.jpg"/></router-link>
         </div>
         <div class="catagory-box" flex="box:mean">
-            <router-link to="/shopList"><i class="catagory-1"></i><p>快速借钱</p></router-link>
-            <router-link to="/shopList"><i class="catagory-2"></i><p>2千以下</p></router-link>
-            <router-link to="/shopList"><i class="catagory-3"></i><p>2千-1万</p></router-link>
-            <router-link to="/shopList"><i class="catagory-4"></i><p>1万-6万</p></router-link>
-            <router-link to="/shopList"><i class="catagory-5"></i><p>6万以上</p></router-link>
+            <router-link to="/"><i class="catagory-1"></i><p>快速借钱</p></router-link>
+            <router-link to="/"><i class="catagory-2"></i><p>2千以下</p></router-link>
+            <router-link to="/"><i class="catagory-3"></i><p>2千-1万</p></router-link>
+            <router-link to="/"><i class="catagory-4"></i><p>1万-6万</p></router-link>
+            <router-link to="/"><i class="catagory-5"></i><p>6万以上</p></router-link>
         </div>
         <div class="link-img">
             <router-link to="/"><img src="../../assets/img/link-1.jpg"/></router-link>
@@ -27,7 +27,7 @@
         </div>
         <div class="item-box">
             <div class="item-title">
-                <p class="gold"><i></i>推荐贷款列表 <router-link to="/"><span>更多产品</span><i class="icon-right"></i></router-link></p>
+                <p class="gold"><i class="icon-great"></i>推荐贷款列表 <router-link to="/"><span>更多产品</span><i class="icon-right"></i></router-link></p>
 
             </div>
             <div class="item-list">
@@ -36,7 +36,7 @@
                         <div class="item-left"></div>
                         <div class="item-center">
                             <h2>小米管家</h2>
-                            <span class="tips">芝麻分 580 秒下款</span>
+                            <span class="tips-gold">芝麻分 580 秒下款</span>
                             <p class="desc">可借1千-5万，最长可借365天</p>
                         </div>
                         <div class="item-right"><i class="icon-right"></i></div>
@@ -47,7 +47,7 @@
                         <div class="item-left"></div>
                         <div class="item-center">
                             <h2>小米管家</h2>
-                            <span class="tips">芝麻分 580 秒下款</span>
+                            <span class="tips-gold">芝麻分 580 秒下款</span>
                             <p class="desc">可借1千-5万，最长可借365天</p>
                         </div>
                         <div class="item-right"><i class="icon-right"></i></div>
@@ -58,7 +58,8 @@
                         <div class="item-left"></div>
                         <div class="item-center">
                             <h2>小米管家</h2>
-                            <span class="tips">芝麻分 580 秒下款</span>
+                            <span class="tips-gold">芝麻分 580 秒下款</span>
+                            <span class="tips-blue">线上审核</span>
                             <p class="desc">可借1千-5万，最长可借365天</p>
                         </div>
                         <div class="item-right"><i class="icon-right"></i></div>
@@ -69,7 +70,7 @@
                         <div class="item-left"></div>
                         <div class="item-center">
                             <h2>小米管家</h2>
-                            <span class="tips">芝麻分 580 秒下款</span>
+                            <span class="tips-gold">芝麻分 580 秒下款</span>
                             <p class="desc">可借1千-5万，最长可借365天</p>
                         </div>
                         <div class="item-right"><i class="icon-right"></i></div>
@@ -80,7 +81,7 @@
                         <div class="item-left"></div>
                         <div class="item-center">
                             <h2>小米管家</h2>
-                            <span class="tips">芝麻分 580 秒下款</span>
+                            <span class="tips-gold">芝麻分 580 秒下款</span>
                             <p class="desc">可借1千-5万，最长可借365天</p>
                         </div>
                         <div class="item-right"><i class="icon-right"></i></div>

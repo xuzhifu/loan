@@ -164,6 +164,14 @@
                 </div>
             </div>
         </div>
+        <div class="recommend-box">
+            <div class="recommend-title"><h2><i class="icon-dot"></i>推荐专题</h2></div>
+            <div class="recommend-content" flex="box:mean">
+                <router-link to="/"><img src="../../assets/img/recommend-1.png"/></router-link>
+                <router-link to="/"><img src="../../assets/img/recommend-2.png"/></router-link>
+                <router-link to="/"><img src="../../assets/img/recommend-3.png"/></router-link>
+            </div>
+        </div>
     </div>
 </template>
 <script type="text/ecmascript-6">
