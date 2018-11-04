@@ -1,5 +1,5 @@
-@import './theme.less';
 @charset "UTF-8";
+@import './theme.less';
 *,*:before,*:after{box-sizing:border-box;vertical-align:top;}
 html, body{height:100%;-webkit-tap-highlight-color:transparent; -webkit-tap-highlight:transparent;-webkit-text-size-adjust:none;}
 html,body,div,span,h1,h2,h3,h4,h5,h6,p,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead{margin:0;padding:0;background:none repeat scroll 0 0 transparent;outline:0 none;border:0;}
@@ -13,7 +13,7 @@ a,button,input{-webkit-tap-highlight-color: rgba(0,0,0,0);tap-highlight-color: r
 .nowrap{display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;word-wrap: break-word;word-break: break-all;}//文本超过隐藏
 p{display:table;width:100%;background-color:transparent;word-break:break-all;}
 .msg-desc p{display:block;}
-em{font-style:italic;}
+em{font-style:normal;}
 ::-moz-selection{background:#0065AD;color:#fff;}
 ::selection{background:#0065AD;color:#fff;}
 textarea,input[type="password"],input[type="text"],input[type="search"]{resize:none;outline:0;-webkit-appearance:none;white-space:pre-wrap;word-wrap:break-word;background-color:#fff;-webkit-appearance:none;}/*ios safari上的圆角问题*/
@@ -23,12 +23,12 @@ textarea::-webkit-input-placeholder,input[type="password"]::-webkit-input-placeh
 header,section,footer,aside,nav,article,figure{display:block;margin:0;}
 .module-container{height:100%;}
 
-.gold{color:@color-orange-number;}
-.gray{color:@color-gray-99;}
-.green{color:@color-green;}
-.orange{color:@color-orange;}
-.red{color:@color-red;}
-.blue{color:@color-blue}
+.fc-gold{color:@color-orange-number;}
+.fc-gray{color:@color-gray-99;}
+.fc-green{color:@color-green;}
+.fc-orange{color:@color-orange;}
+.fc-red{color:@color-red;}
+.fc-blue{color:@color-blue}
 
 [flex],[flex]>*,[flex]>[flex]{overflow:hidden;}
 [flex]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}
@@ -72,6 +72,11 @@ header,section,footer,aside,nav,article,figure{display:block;margin:0;}
     -moz-osx-font-smoothing: grayscale;
 }
 .add-overflow{}
+
+.cell-button-orange{width:212px;height:40px;background-color:@color-orange;font-size:15px;color:@color-white;text-align:center;line-height:40px;border-radius:40px;border:0;}
+.cell-button-orange:hover{background-color:@color-orange-hover;}
+
+
 
 .router-translate {position: absolute;width:100%;height:100%;transition: all .5s cubic-bezier(.55,0,.1,1); }
 .router-translate.first-load{-webkit-transform:translate(0, 0);transform:translate(0, 0);}

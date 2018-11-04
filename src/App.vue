@@ -1,5 +1,6 @@
 <style lang="less">
     @import "./assets/styles/component.less";
+    @import "./assets/styles/main.less";
 </style>
 
 <template>
