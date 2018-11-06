@@ -9,22 +9,22 @@
                     <div class="title-left" flex-box="0"></div>
                     <div class="title-right" flex-box="1">
                         <h2>通过王</h2>
-                        <p><span class="gold">120万</span>人申请 * <span class="gold">30分钟</span>放款</p>
+                        <p><span class="fc-gold">120.8万</span>人申请 * <span class="fc-gold">30分钟</span>放款</p>
                     </div>
                 </div>
-                <div class="title-bottom"><i></i>芝麻分 580 秒下款</div>
+                <div class="title-bottom"><i class="icon-pass fc-gold"></i>芝麻分 580 秒下款</div>
             </div>
             <div class="info-box">
                 <div class="info-item">
                     <h2><i class="icon-dot"></i>基本信息</h2>
                     <div class="info-flex" flex="box:mean">
                         <div>
-                            <p class="gray">日利率（%）</p>
+                            <p class="fc-gray">日利率（%）</p>
                             <p>0.02%</p>
                         </div>
                         <div>
-                            <p><span class="gray">额度查询：</span>1500-20000</p>
-                            <p><span class="gray">期限范围：</span>7-30天</p>
+                            <p><span class="fc-gray">额度查询：</span>1500-20000</p>
+                            <p><span class="fc-gray">期限范围：</span>7-30天</p>
                         </div>
                     </div>
                 </div>
@@ -59,22 +59,23 @@
         </div>
         <div class="dialog-box" v-if="show">
             <div class="dialog-wrap">
-                <div class="dialog-title">验证手机号提高通过率<i class="" @click="getClose"></i></div>
+                <div class="dialog-title">验证手机号提高通过率<i class="icon-close" @click="getClose"></i></div>
                 <div class="form-box">
-                    <p class="input-box">
-                        <i class="icon-input icon-account"></i>
-                        <mt-field label="手机号" placeholder="请输入手机号" v-model="demo"></mt-field>
-                    </p>
-                    <p class="input-box input-code">
-                        <i class="icon-input icon-account"></i>
+                    <div class="input-box" flex="box:mean">
+                        <p flex="cross:center main:center"><i class="icon-input icon-phone"></i><span>手机号</span></p>
+                        <mt-field label="" placeholder="请输入手机号" v-model="demo"></mt-field>
+                    </div>
+                    <div class="input-box input-code" flex="box:mean">
                         <mt-field label="" placeholder="请输入图形验证码" v-model="demo"></mt-field>
-                        <img src="../../assets/img/banner.jpg" height="45px" width="100px">
-                    </p>
-                    <p class="input-box input-code">
-                        <i class="icon-input icon-account"></i>
+                        <p class="code"><img src="../../assets/img/banner.jpg" @click="getCodeImg"></p>
+                    </div>
+                    <div class="input-box input-code" flex="box:mean">
                         <mt-field label="" placeholder="请输入验证码" v-model="demo"></mt-field>
-                        <span class="code" @click="getCode">获取验证码</span>
-                    </p>
+                        <p class="code fc-gold" @click="getCode">
+                            <span v-if="true">获取验证码</span>
+                            <span v-else>59s</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,7 +92,7 @@
         data() {
             return {
                 demo:null,
-                show:false,
+                show:true,
             };
         },
         mounted() {
@@ -102,6 +103,9 @@
             init(){
                 let self = this;
             },
+            getCodeImg(){
+
+            },
             getCode(){
 
             },
@@ -109,7 +113,7 @@
                 this.show = false;
             },
             getApply(){
-                //this.show = true;
+                this.show = true;
             }
         },
     };

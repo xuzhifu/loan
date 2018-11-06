@@ -26,7 +26,7 @@
         </div>
         <div class="item-box">
             <div class="item-title">
-                <p class="gold"><i class="icon-great"></i>推荐贷款列表 <router-link to="/"><span>更多产品</span><i class="icon-right"></i></router-link></p>
+                <p class="fc-gold"><i class="icon-great"></i>推荐贷款列表 <router-link to="/"><span>更多产品</span><i class="icon-right"></i></router-link></p>
 
             </div>
             <div class="item-list">

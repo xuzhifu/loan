@@ -116,7 +116,10 @@
                 p{font-size:12px;}
             }
         }
-        .title-bottom{font-size:12px;line-height:30px;padding:0 18px;}
+        .title-bottom{
+            font-size:12px;line-height:30px;padding:0 18px;color:#777;
+            i{margin-right:5px;}
+        }
     }
     .info-box{background:#f6f6f6;padding:5px 10px;
         .info-item{background:#fff;margin:5px 0;padding:10px 25px;
@@ -192,17 +195,24 @@
 
 /* 弹窗 */
 .dialog-box{height: 100%;width: 100%;z-index: 10;background-color: rgba(0, 0, 0, 0.5);position: fixed;left: 0;top: 0;
-    .dialog-wrap{padding:20px;position: absolute;bottom: 0px;left:50%;width:710px;margin-left:-375px;background:#fff;
-        .dialog-title{text-align:center;padding:10px 0;font-size:28px;position:relative;
-            i{position:absolute;right:0;line-height:40px;color:#666;
-                &:active{color:#000;}
-            }
+    .dialog-wrap{position: absolute;top:50%;left:50%;background:#fff;  -webkit-transform: translate(-50%,-50%);transform:translate(-50%,-50%);width:80%;border-radius:5px;
+        .dialog-title{text-align:center;padding:15px 0;font-size:16px;position:relative;background:@color-orange;color:#fff;border-top-left-radius:5px;border-top-right-radius:5px;
+            i{position:absolute;top:8px;right:8px;color:#eaeaea;}
         }
-        .form-box{margin:0 10px;
-            .input-box{border-bottom:1px solid #eee;
-                .icon-input{line-height:48px;display:inline-block;font-size:22px;margin:0 10px;}
-                .mint-cell{display:inline-block;background-image:none;}
-                .code{color:@color-orange-number;line-height:48px;float:right;margin-right:10px;font-size:15px;}
+        .form-box{padding:20px 15px 10px;
+            .input-box{border:1px solid #eee;margin-bottom:15px;height: 40px;
+                .mint-cell{min-height: 40px;
+                    .mint-cell-wrapper{background-image:none;}
+                    &:last-child{background-image:none;}
+                    .mint-field-core{font-size:14px;}
+                }
+                .icon-input{margin-right:10px;font-size:25px;}
+                &.input-code{border:none;
+                    .mint-cell{border:1px solid #eee;}
+                    .code{border:1px solid #eee;border-radius:30px;margin-left:20px;text-align:center;line-height:37px;
+                        img{height:100%;width:100%;}
+                    }
+                }
             }
         }
     }

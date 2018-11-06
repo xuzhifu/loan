@@ -18,22 +18,22 @@
                     </div>
                     <div class="loan-bottom" flex="box:mean">
                         <div>
-                            <p class="gold">1600-20000</p>
-                            <p class="gray">可借额度(元)</p>
+                            <p class="fc-gold">1600-20000</p>
+                            <p class="fc-gray">可借额度(元)</p>
                         </div>
                         <div>
                             <p>0.02%</p>
-                            <p class="gray">日利率(%)</p>
+                            <p class="fc-gray">日利率(%)</p>
                         </div>
                         <div>
                             <p>30天</p>
-                            <p class="gray">最长可借时间</p>
+                            <p class="fc-gray">最长可借时间</p>
                         </div>
                     </div>
                 </div>
                 <div class="loan-right" flex="main:center cross:center">
                     <div>
-                        <p><span class="gold">1888</span>万人已申请</p>
+                        <p><span class="fc-gold">1888</span>万人已申请</p>
                         <mt-button type="primary">申请</mt-button>
                     </div>
                 </div>
@@ -49,22 +49,22 @@
                     </div>
                     <div class="loan-bottom" flex="box:mean">
                         <div>
-                            <p class="gold">1600-20000</p>
-                            <p class="gray">可借额度(元)</p>
+                            <p class="fc-gold">1600-20000</p>
+                            <p class="fc-gray">可借额度(元)</p>
                         </div>
                         <div>
                             <p>0.02%</p>
-                            <p class="gray">日利率(%)</p>
+                            <p class="fc-gray">日利率(%)</p>
                         </div>
                         <div>
                             <p>30天</p>
-                            <p class="gray">最长可借时间</p>
+                            <p class="fc-gray">最长可借时间</p>
                         </div>
                     </div>
                 </div>
                 <div class="loan-right" flex="main:center cross:center">
                     <div>
-                        <p><span class="gold">1888</span>万人已申请</p>
+                        <p><span class="fc-gold">1888</span>万人已申请</p>
                         <mt-button type="primary">申请</mt-button>
                     </div>
                 </div>
@@ -80,22 +80,22 @@
                     </div>
                     <div class="loan-bottom" flex="box:mean">
                         <div>
-                            <p class="gold">1600-20000</p>
-                            <p class="gray">可借额度(元)</p>
+                            <p class="fc-gold">1600-20000</p>
+                            <p class="fc-gray">可借额度(元)</p>
                         </div>
                         <div>
                             <p>0.02%</p>
-                            <p class="gray">日利率(%)</p>
+                            <p class="fc-gray">日利率(%)</p>
                         </div>
                         <div>
                             <p>30天</p>
-                            <p class="gray">最长可借时间</p>
+                            <p class="fc-gray">最长可借时间</p>
                         </div>
                     </div>
                 </div>
                 <div class="loan-right" flex="main:center cross:center">
                     <div>
-                        <p><span class="gold">1888</span>万人已申请</p>
+                        <p><span class="fc-gold">1888</span>万人已申请</p>
                         <mt-button type="primary">申请</mt-button>
                     </div>
                 </div>
@@ -111,22 +111,22 @@
                     </div>
                     <div class="loan-bottom" flex="box:mean">
                         <div>
-                            <p class="gold">1600-20000</p>
-                            <p class="gray">可借额度(元)</p>
+                            <p class="fc-gold">1600-20000</p>
+                            <p class="fc-gray">可借额度(元)</p>
                         </div>
                         <div>
                             <p>0.02%</p>
-                            <p class="gray">日利率(%)</p>
+                            <p class="fc-gray">日利率(%)</p>
                         </div>
                         <div>
                             <p>30天</p>
-                            <p class="gray">最长可借时间</p>
+                            <p class="fc-gray">最长可借时间</p>
                         </div>
                     </div>
                 </div>
                 <div class="loan-right" flex="main:center cross:center">
                     <div>
-                        <p><span class="gold">1888</span>万人已申请</p>
+                        <p><span class="fc-gold">1888</span>万人已申请</p>
                         <mt-button type="primary">申请</mt-button>
                     </div>
                 </div>
@@ -142,22 +142,22 @@
                     </div>
                     <div class="loan-bottom" flex="box:mean">
                         <div>
-                            <p class="gold">1600-20000</p>
-                            <p class="gray">可借额度(元)</p>
+                            <p class="fc-gold">1600-20000</p>
+                            <p class="fc-gray">可借额度(元)</p>
                         </div>
                         <div>
                             <p>0.02%</p>
-                            <p class="gray">日利率(%)</p>
+                            <p class="fc-gray">日利率(%)</p>
                         </div>
                         <div>
                             <p>30天</p>
-                            <p class="gray">最长可借时间</p>
+                            <p class="fc-gray">最长可借时间</p>
                         </div>
                     </div>
                 </div>
                 <div class="loan-right" flex="main:center cross:center">
                     <div>
-                        <p><span class="gold">1888</span>万人已申请</p>
+                        <p><span class="fc-gold">1888</span>万人已申请</p>
                         <mt-button type="primary">申请</mt-button>
                     </div>
                 </div>
