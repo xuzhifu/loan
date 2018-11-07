@@ -61,21 +61,24 @@
             <div class="dialog-wrap">
                 <div class="dialog-title">验证手机号提高通过率<i class="icon-close" @click="getClose"></i></div>
                 <div class="form-box">
-                    <div class="input-box" flex="box:mean">
-                        <p flex="cross:center main:center"><i class="icon-input icon-phone"></i><span>手机号</span></p>
-                        <mt-field label="" placeholder="请输入手机号" v-model="demo"></mt-field>
+                    <div class="input-box" flex="">
+                        <p flex-box="0" flex="cross:center main:center" style="width:50px"><i class="icon-input icon-phone"></i></p>
+                        <p flex-box="1"><mt-field label="" placeholder="请填写手机号" v-model="demo"></mt-field></p>
                     </div>
                     <div class="input-box input-code" flex="box:mean">
                         <mt-field label="" placeholder="请输入图形验证码" v-model="demo"></mt-field>
                         <p class="code"><img src="../../assets/img/banner.jpg" @click="getCodeImg"></p>
                     </div>
                     <div class="input-box input-code" flex="box:mean">
-                        <mt-field label="" placeholder="请输入验证码" v-model="demo"></mt-field>
+                        <mt-field label="" placeholder="请输入短信验证码" v-model="demo"></mt-field>
                         <p class="code fc-gold" @click="getCode">
                             <span v-if="true">获取验证码</span>
                             <span v-else>59s</span>
                         </p>
                     </div>
+                </div>
+                <div class="ui-button-box" flex="main:center">
+                    <button class="cell-button-orange">马上拿钱</button>
                 </div>
             </div>
         </div>
@@ -92,7 +95,7 @@
         data() {
             return {
                 demo:null,
-                show:true,
+                show:false,
             };
         },
         mounted() {
