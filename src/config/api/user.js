@@ -11,7 +11,7 @@
 
 export default {
     // 获取首页数据轮番图
-    swiperList(params) {
+    bannerList(params) {
         return {method: 'post', url: '/api/v1/index/index', params: params}
     },
     // 获取贷款产品列表

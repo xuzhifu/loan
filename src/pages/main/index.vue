@@ -109,7 +109,16 @@
         },
         methods:{
             init(){
+                let self = this
+                let postData = {
 
+                }
+
+                fetch('bannerList', {}).then(response => {
+
+                }).catch(function (error) {
+
+                })
             },
             getTab(data){
                 let self = this;
