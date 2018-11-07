@@ -10,11 +10,11 @@
         </div>
         <div class="link-box">
             <div class="link-list">
-                <router-link to="/"><i class="icon-money gold"></i>签到领现金<i class="icon-right"></i></router-link>
-                <router-link to="/"><i class="icon-message green"></i>消息中心<i class="icon-right"></i></router-link>
-                <router-link to="/"><i class="icon-blacklist blue"></i>黑名单查询<i class="icon-right"></i></router-link>
-                <router-link to="/"><i class="icon-help red"></i>帮助中心<i class="icon-right"></i></router-link>
-                <router-link to="/"><i class="icon-suggest orange"></i>投诉建议<i class="icon-right"></i></router-link>
+                <router-link to="/"><i class="icon-money fc-gold"></i>签到领现金<i class="icon-right"></i></router-link>
+                <router-link to="/"><i class="icon-message fc-green"></i>消息中心<i class="icon-right"></i></router-link>
+                <router-link to="/"><i class="icon-blacklist fc-blue"></i>黑名单查询<i class="icon-right"></i></router-link>
+                <router-link to="/"><i class="icon-help fc-red"></i>帮助中心<i class="icon-right"></i></router-link>
+                <router-link to="/"><i class="icon-suggest fc-orange"></i>投诉建议<i class="icon-right"></i></router-link>
             </div>
         </div>
     </div>
