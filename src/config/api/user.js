@@ -10,16 +10,39 @@
  */
 
 export default {
-    // 登录接口
+    // 获取首页数据轮番图
+    swiperList(params) {
+        return {method: 'post', url: '/api/v1/index/index', params: params}
+    },
+    // 获取贷款产品列表
+    loanProduct(params) {
+        return {method: 'post', url: '/product/lists', params: params}
+    },
+    // 获取贷款产品详情
+    loanProductDetail(params) {
+        return {method: 'post', url: '/product/detail', params: params}
+    },
+    // 获取“一定借到钱”贷款产品
+    borrowMoney(params) {
+        return {method: 'post', url: '/product/must', params: params}
+    },
+    // 获取"全部贷款"的筛选条件
+    productFilter(params) {
+        return {method: 'post', url: '/product/filter', params: params}
+    },
+
+
+
+    // 获取短信验证码
+    SMSCode(params) {
+        return {method: 'post', url: '/sms/send', params: params}
+    },
+    // 获取图形验证码
+    imageCode(params) {
+        return {method: 'post', url: '/captcha/index', params: params}
+    },
+    // 用户通过手机登录
     login(params) {
-        return {method: 'post', url: '/gongfu/v2/authenticate', params: params}
+        return {method: 'post', url: '/user/mobilelogin', params: params}
     },
-    // 同意协议
-    agreeAgreement(params) {
-        return {method: 'post', url: '/api/user/agree_item_time', params: params}
-    },
-    // 退出登录
-    logout(params) {
-        return {method: 'post', url: '/gongfu/logout', params: params}
-    }
 }

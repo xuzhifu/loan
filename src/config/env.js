@@ -23,13 +23,13 @@ let routerMode = null
 let imgBaseUrl = null
 
 if (process.env.NODE_ENV === 'development') {
-    baseAccessUrl = 'http://gethost.runwise.cn/' // 验证身份
-    baseUrl = 'http://gethost.runwise.cn/'
+    baseAccessUrl = 'http://47.244.118.104/index.php' // 验证身份
+    baseUrl = 'http://47.244.118.104/index.php'
     routerMode = 'hash' // history
 }
 else if (process.env.NODE_ENV === 'production') {
-    baseAccessUrl = 'http://gethost.runwise.cn/'
-    baseUrl = 'http://gethost.runwise.cn/'
+    baseAccessUrl = 'http://47.244.118.104/index.php'
+    baseUrl = 'http://47.244.118.104/index.php'
 }
 
 export {
