@@ -6,90 +6,57 @@
         <!--<div class="banner-box">
             <router-link to="/"><img src="../../assets/img/banner.jpg"/></router-link>
         </div>-->
-        <mt-swipe class="banner-box">
-            <mt-swipe-item class="swip-item-1 item"><img src="http://ooldo78yy.bkt.clouddn.com/2018-03-141521021828.png?imageView2/1/w/375/h/159"/></mt-swipe-item>
-            <mt-swipe-item class="swip-item-2 item"><img src="http://ooldo78yy.bkt.clouddn.com/2018-03-141521021828.png?imageView2/1/w/375/h/159"/></mt-swipe-item>
-            <mt-swipe-item class="swip-item-3 item"><img src="http://ooldo78yy.bkt.clouddn.com/2018-03-141521021828.png?imageView2/1/w/375/h/159"/></mt-swipe-item>
+        <mt-swipe class="ui-swipe-box">
+            <mt-swipe-item v-for="item in swipeList" :key="item.id">
+                <a :href="item.url"><img :src="item.image" /></a>
+            </mt-swipe-item>
         </mt-swipe>
 
-        <div class="catagory-box" flex="box:mean">
-            <router-link to="/"><i class="catagory-1"></i><p>快速借钱</p></router-link>
-            <router-link to="/"><i class="catagory-2"></i><p>2千以下</p></router-link>
-            <router-link to="/"><i class="catagory-3"></i><p>2千-1万</p></router-link>
-            <router-link to="/"><i class="catagory-4"></i><p>1万-6万</p></router-link>
-            <router-link to="/"><i class="catagory-5"></i><p>6万以上</p></router-link>
+        <div class="ui-series-row-box" flex="box:mean">
+           <ul flex="dir:left">
+               <li v-for="item in seriesRowList" :key="item.id">
+                   <div class="cell-thumb"><img :src="item.image" /></div>
+                   <p>{{item.name}}</p>
+               </li>
+           </ul>
         </div>
-        <div class="link-img">
-            <router-link to="/"><img src="../../assets/img/link-1.jpg"/></router-link>
-            <router-link to="/"><img src="../../assets/img/link-2.jpg"/></router-link>
-            <router-link to="/"><img src="../../assets/img/link-3.jpg"/></router-link>
-            <router-link to="/"><img src="../../assets/img/link-4.jpg"/></router-link>
-            <router-link to="/"><img src="../../assets/img/link-5.jpg"/></router-link>
-            <router-link to="/"><img src="../../assets/img/link-6.jpg"/></router-link>
+
+        <div class="ui-series-column-box">
+            <ul>
+                <li v-for="item in seriesColumnList" :key="item.id">
+                    <p>{{item.name}}</p>
+                    <p></p>
+                    <div class="cell-thumb"><img :src="item.image" /></div>
+                </li>
+            </ul>
         </div>
-        <div class="banner-min">
-            <router-link to="/"><img src="../../assets/img/banner-min.jpg"/></router-link>
+
+        <div class="ui-banner">
+            <a :href="bannerList.url"><img :src="bannerList.image"/></a>
         </div>
+
+
         <div class="item-box">
             <div class="item-title">
                 <p class="fc-gold"><i class="icon-great"></i>推荐贷款列表 <router-link to="/"><span>更多产品</span><i class="icon-right"></i></router-link></p>
 
             </div>
             <div class="item-list">
-                <router-link to="/">
-                    <div class="item" flex="dir:left box:justify">
-                        <div class="item-left"></div>
-                        <div class="item-center">
-                            <h2>小米管家</h2>
-                            <span class="tips-gold">芝麻分 580 秒下款</span>
-                            <p class="desc">可借1千-5万，最长可借365天</p>
+                <router-link to="/" v-for="item in reclistList" :key="item.id">
+                    <div class="ui-item" flex="cross:center">
+                        <div class="cell-thumb" flex-box="0" flex="main:center cross:center">
+                            <img :src="item.image" />
                         </div>
-                        <div class="item-right"><i class="icon-right"></i></div>
-                    </div>
-                </router-link>
-                <router-link to="/">
-                    <div class="item" flex="dir:left box:justify">
-                        <div class="item-left"></div>
-                        <div class="item-center">
-                            <h2>小米管家</h2>
-                            <span class="tips-gold">芝麻分 580 秒下款</span>
-                            <p class="desc">可借1千-5万，最长可借365天</p>
+                        <div class="ui-content" flex-box="1">
+                            <h3>{{item.name}}</h3>
+                            <div class="ui-tips">
+                                <span class="cell-gold">{{item.reclist}}</span>
+                                <span class="cell-blue" v-show="!!item.accounting">{{item.accounting}}</span>
+                            </div>
+                            <p class="cell-desc">可借{{item.quota_min}}-{{item.quota_max}}，最长可借{{item.deadline_max}}天</p>
+
+                            <i class="icon-right"></i>
                         </div>
-                        <div class="item-right"><i class="icon-right"></i></div>
-                    </div>
-                </router-link>
-                <router-link to="/">
-                    <div class="item" flex="dir:left box:justify">
-                        <div class="item-left"></div>
-                        <div class="item-center">
-                            <h2>小米管家</h2>
-                            <span class="tips-gold">芝麻分 580 秒下款</span>
-                            <span class="tips-blue">线上审核</span>
-                            <p class="desc">可借1千-5万，最长可借365天</p>
-                        </div>
-                        <div class="item-right"><i class="icon-right"></i></div>
-                    </div>
-                </router-link>
-                <router-link to="/">
-                    <div class="item" flex="dir:left box:justify">
-                        <div class="item-left"></div>
-                        <div class="item-center">
-                            <h2>小米管家</h2>
-                            <span class="tips-gold">芝麻分 580 秒下款</span>
-                            <p class="desc">可借1千-5万，最长可借365天</p>
-                        </div>
-                        <div class="item-right"><i class="icon-right"></i></div>
-                    </div>
-                </router-link>
-                <router-link to="/">
-                    <div class="item" flex="dir:left box:justify">
-                        <div class="item-left"></div>
-                        <div class="item-center">
-                            <h2>小米管家</h2>
-                            <span class="tips-gold">芝麻分 580 秒下款</span>
-                            <p class="desc">可借1千-5万，最长可借365天</p>
-                        </div>
-                        <div class="item-right"><i class="icon-right"></i></div>
                     </div>
                 </router-link>
             </div>
@@ -106,7 +73,11 @@
     export default {
         data() {
             return {
-
+                swipeList: [],
+                bannerList: [],
+                seriesRowList: [],
+                seriesColumnList: [],
+                reclistList: []
             };
         },
         mounted () {
@@ -121,7 +92,11 @@
                 }
 
                 fetch('bannerList', {}).then(response => {
-                    console.log(response)
+                    self.swipeList = response.data.banner_top
+                    self.seriesRowList = response.data.category_row
+                    self.seriesColumnList = response.data.category_column
+                    self.bannerList = response.data.banner_mid[0]
+                    self.reclistList = response.data.reclist
                 }).catch(function (error) {
 
                 })
