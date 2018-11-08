@@ -237,6 +237,14 @@
         methods: {
             init(){
                 let self = this;
+                let postData = {
+
+                }
+                fetch('productFilter', {}).then(response => {
+
+                }).catch(function (error) {
+
+                })
             },
             getTypeHandle(index){
                 let self = this;
