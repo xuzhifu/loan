@@ -3,9 +3,15 @@
 
 <template>
     <div class="index-box">
-        <div class="banner-box">
+        <!--<div class="banner-box">
             <router-link to="/"><img src="../../assets/img/banner.jpg"/></router-link>
-        </div>
+        </div>-->
+        <mt-swipe class="banner-box">
+            <mt-swipe-item class="swip-item-1 item"><img src="http://ooldo78yy.bkt.clouddn.com/2018-03-141521021828.png?imageView2/1/w/375/h/159"/></mt-swipe-item>
+            <mt-swipe-item class="swip-item-2 item"><img src="http://ooldo78yy.bkt.clouddn.com/2018-03-141521021828.png?imageView2/1/w/375/h/159"/></mt-swipe-item>
+            <mt-swipe-item class="swip-item-3 item"><img src="http://ooldo78yy.bkt.clouddn.com/2018-03-141521021828.png?imageView2/1/w/375/h/159"/></mt-swipe-item>
+        </mt-swipe>
+
         <div class="catagory-box" flex="box:mean">
             <router-link to="/"><i class="catagory-1"></i><p>快速借钱</p></router-link>
             <router-link to="/"><i class="catagory-2"></i><p>2千以下</p></router-link>
@@ -115,7 +121,7 @@
                 }
 
                 fetch('bannerList', {}).then(response => {
-
+                    console.log(response)
                 }).catch(function (error) {
 
                 })

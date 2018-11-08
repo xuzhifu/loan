@@ -10,9 +10,7 @@
             <mr-header-bar></mr-header-bar>
         </div>
 
-        <div class="wrap">
-            <router-view></router-view>
-        </div>
+        <router-view></router-view>
 
         <div class="menu-box">
             <mt-tabbar v-model="selected">

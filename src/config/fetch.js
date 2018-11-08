@@ -70,7 +70,7 @@ export function fetch(actionObj, error) {
     let promise = new Promise((resolve, reject) => {
         VueAxios.then(response => {
             // console.log('请求成功')
-            resolve(response)
+            resolve(response.data)
         }).catch((error) => {
             // console.log('请求失败', reject(error))
             reject(error)
