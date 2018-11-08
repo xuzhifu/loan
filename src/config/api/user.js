@@ -12,7 +12,7 @@
 export default {
     // 获取首页数据轮番图
     bannerList(params) {
-        return {method: 'post', url: '/api/v1/index/index', params: params}
+        return {method: 'get', url: '/api/v1/index/index', params: params}
     },
     // 获取贷款产品列表
     loanProduct(params) {
