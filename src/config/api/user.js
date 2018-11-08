@@ -16,7 +16,7 @@ export default {
     },
     // 获取贷款产品列表
     loanProduct(params) {
-        return {method: 'post', url: '/product/lists', params: params}
+        return {method: 'get', url: '/product/lists', params: params}
     },
     // 获取贷款产品详情
     loanProductDetail(params) {
@@ -28,7 +28,7 @@ export default {
     },
     // 获取"全部贷款"的筛选条件
     productFilter(params) {
-        return {method: 'post', url: '/product/filter', params: params}
+        return {method: 'get', url: '/product/filter', params: params}
     },
 
 
