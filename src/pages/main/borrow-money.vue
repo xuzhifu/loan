@@ -69,7 +69,9 @@
                 }
                 fetch('borrowMoney', {}).then(response => {
 
-                }).catch(function (error) {})
+                }).catch((error) => {
+
+                })
             },
 
         },

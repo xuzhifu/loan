@@ -5,21 +5,17 @@
 <template>
     <div class="loan-box">
         <div class="ui-filter-box">
-
-
             <div class="ui-item" flex="">
                 <div class="cell-title" flex="flex-box-0">类型：</div>
                 <div class="ui-option-list" flex="dir-left flex-box-1">
-                    <span :class="{ active: item.active }" @click="getCategoryHandle(index)" v-for="(item, index) in category" :key="index" >{{ item.name }}</span>
+                    <span :class="{ active: item.active }" @click="getCategoryHandle(item)" v-for="(item, index) in category" :key="index" >{{ item.name }}</span>
                 </div>
             </div>
-
-
 
             <div class="ui-item" flex="">
                 <div class="cell-title" flex="flex-box-0">身份：</div>
                 <div class="ui-option-list" flex="dir-left flex-box-1">
-                    <span :class="{ active: item.active }" @click="getReclistHandle(index)" v-for="(item, index) in reclist" :key="index" >{{ item.name }}</span>
+                    <span :class="{ active: item.active }" @click="getReclistHandle(item)" v-for="(item, index) in reclist" :key="index" >{{ item.name }}</span>
                 </div>
             </div>
         </div>
@@ -53,7 +49,7 @@
                 <div class="loan-right" flex="main:center cross:center">
                     <div>
                         <p><span class="fc-gold">{{item.allow_apply}}</span>万人已申请</p>
-                        <mt-button type="primary" @click="getApplayHandle(item.id)">申请</mt-button>
+                        <mt-button type="primary" @click="getApplayHandle(item)">申请</mt-button>
                     </div>
                 </div>
             </div>
@@ -78,57 +74,81 @@
             };
         },
         mounted() {
-            let self = this;
-            self.init();
+            let self = this
+            self.init()
         },
         methods: {
+            /**
+             * 初始化数据
+             */
             init(){
-                let self = this;
+                let self = this
+                self.__productFilter()
+                self.__productData()
+            },
+            /**
+             * 获取产品筛选条件
+             * @param index
+             */
+            __productFilter(){
+                let self = this
                 let postData = {}
                 fetch('productFilter', {}).then(response => {
-                    let category = response.data.category;
-                    let reclist = response.data.reclist;
-                    category && category.forEach((n, i) => {
-                        category[i].active = false;
-                    })
-                    reclist && reclist.forEach((n, i) => {
-                        reclist[i].active = false;
-                    })
-                    self.category = category;
-                    self.reclist = reclist;
-                }).catch(function (error) {})
-                self.getLoanProduct();
-            },
-            getCategoryHandle(index){
-                let self = this;
-                self.category && self.category.forEach((n, i) => {
-                    self.category[i].active = false  ;
+                    self.category = response.data.category
+                    self.reclist = response.data.reclist
+                }).catch((error) => {
+
                 })
-                self.category[index].active = true;
-                self.cat_id = self.category[index].id;
-                self.getLoanProduct();
             },
-            getReclistHandle(index){
-                let self = this;
-                self.reclist && self.reclist.forEach((n, i) => {
-                    self.reclist[i].active = false;
-                })
-                self.reclist[index].active = true;
-                self.identity = self.reclist[index].name;
-                self.getLoanProduct();
-            },
-            getLoanProduct(){
-                let self = this;
+            /**
+             * 获取产品列表
+             * @param index
+             */
+            __productData() {
+                let self = this
                 let postData = {
-                    cat_id:self.cat_id,
-                    identity:self.identity,
+                    cat_id: self.cat_id,
+                    identity: self.identity,
                 }
                 fetch('loanProduct', postData).then(response => {
-                    self.loanProduct = response.data;
-                }).catch(function (error) {})
-            },
-            getApplayHandle(id){
+                    self.loanProduct = response.data
+                }).catch((error) => {
 
+                })
+            },
+
+            /**
+             * 类型过滤
+             * @param index
+             */
+            getCategoryHandle(item) {
+                let self = this;
+                item.active = !item.active
+                self.cat_id = item.id
+
+                self.__productData()
+            },
+            /**
+             * 身份过滤
+             * @param index
+             */
+            getReclistHandle(item){
+                let self = this;
+                item.active = !item.active
+                self.identity = item.name
+
+                self.__productData()
+            },
+            /**
+             * 前往详情页
+             * @param item
+             */
+            getApplayHandle(item){
+                let self = this
+                let query = {
+                    id: item.id
+                }
+                self.$router.push({path: '/apply', query: query})
             }
         },
     };

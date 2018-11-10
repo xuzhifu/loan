@@ -92,7 +92,7 @@ export function setMethods(actionObj) {
             VueAxios = axios.post(actionObj.url, actionObj.params)
             break
         case 'get':
-            VueAxios = axios.get(actionObj.url, actionObj.params)
+            VueAxios = axios.get(actionObj.url, {params: actionObj.params})
             break
         case 'request':
             VueAxios = axios.request(actionObj.url, actionObj.params)

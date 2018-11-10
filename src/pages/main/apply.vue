@@ -102,27 +102,41 @@
             };
         },
         mounted() {
-            let self = this;
-            self.init();
+            let self = this
+            self.init()
         },
         methods: {
+            /**
+             * 初始化数据
+             */
             init(){
                 let self = this;
                 let postData = {
-                    product_id:1
+                    product_id: parseInt(self.$route.query.id, 10)
                 }
+
                 fetch('loanProductDetail', postData).then(response => {
 
-                }).catch(function (error) {})
+                }).catch((error) => {
+
+                })
             },
+            /**
+             * 获取去腥验证码
+             */
             getCodeImg(){
                 let self = this;
                 let postData = {
                 }
                 fetch('imageCode', postData).then(response => {
                     self.captchaImg = response.data.captcha;
-                }).catch(function (error) {})
+                }).catch((error) => {
+
+                })
             },
+            /**
+             * 获取短信验证码
+             */
             getCode(){
                 let self = this;
                 let postData = {
@@ -132,17 +146,28 @@
                 }
                 fetch('SMSCode', postData).then(response => {
 
-                }).catch(function (error) {})
+                }).catch((error) => {
+
+                })
             },
+            /**
+             * 关闭弹窗
+             */
             getClose(){
                 let self = this;
                 self.show = false;
             },
+            /**
+             * 立即申请
+             */
             getOpen(){
                 let self = this;
                 self.show = true;
                 self.getCodeImg();
             },
+            /**
+             * 马上拿钱
+             */
             getApply(){
                 let self = this;
                 let postData = {
@@ -151,7 +176,9 @@
                 }
                 fetch('login', postData).then(response => {
 
-                }).catch(function (error) {})
+                }).catch((error) => {
+
+                })
             }
         },
     };

@@ -38,27 +38,27 @@
 
         <div class="item-box">
             <div class="item-title">
-                <p class="fc-gold"><i class="icon-great"></i>推荐贷款列表 <router-link to="/"><span>更多产品</span><i class="icon-right"></i></router-link></p>
+                <p class="fc-gold"><i class="icon-great"></i>推荐贷款列表 <router-link to="/loan"><span>更多产品</span><i class="icon-right"></i></router-link></p>
 
             </div>
             <div class="item-list">
-                <router-link to="/" v-for="item in reclistList" :key="item.id">
-                    <div class="ui-item" flex="cross:center">
-                        <div class="cell-thumb" flex-box="0" flex="main:center cross:center">
-                            <img :src="item.image" />
-                        </div>
-                        <div class="ui-content" flex-box="1">
-                            <h3>{{item.name}}</h3>
-                            <div class="ui-tips">
-                                <span class="cell-gold">{{item.reclist}}</span>
-                                <span class="cell-blue" v-show="!!item.accounting">{{item.accounting}}</span>
-                            </div>
-                            <p class="cell-desc">可借{{item.quota_min}}-{{item.quota_max}}，最长可借{{item.deadline_max}}天</p>
-
-                            <i class="icon-right"></i>
-                        </div>
+                <div class="ui-item" flex="cross:center"
+                     v-for="item in reclistList" :key="item.id"
+                     @click="getDetail(item)">
+                    <div class="cell-thumb" flex-box="0" flex="main:center cross:center">
+                        <img :src="item.image" />
                     </div>
-                </router-link>
+                    <div class="ui-content" flex-box="1">
+                        <h3>{{item.name}}</h3>
+                        <div class="ui-tips">
+                            <span class="cell-gold">{{item.reclist}}</span>
+                            <span class="cell-blue" v-show="!!item.accounting">{{item.accounting}}</span>
+                        </div>
+                        <p class="cell-desc">可借{{item.quota_min}}-{{item.quota_max}}，最长可借{{item.deadline_max}}天</p>
+
+                        <i class="icon-right"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -81,15 +81,15 @@
             };
         },
         mounted () {
-            let self = this;
-            self.init();
+            let self = this
+            self.init()
         },
         methods:{
+            /**
+             * 初始化数据
+             */
             init(){
                 let self = this
-                let postData = {
-
-                }
 
                 fetch('bannerList', {}).then(response => {
                     self.swipeList = response.data.banner_top
@@ -101,10 +101,17 @@
 
                 })
             },
-            getTab(data){
-                let self = this;
-                self.active = data;
-            },
+            /**
+             * 前往详情页
+             * @param item
+             */
+            getDetail(item) {
+                let self = this
+                let query = {
+                    id: item.id
+                }
+                self.$router.push({path: '/apply', query: query})
+            }
         },
     };
 </script>
