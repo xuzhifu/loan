@@ -6,10 +6,10 @@
         <div class="apply-box">
             <div class="title-box">
                 <div class="title-top" flex="">
-                    <div class="title-left" flex-box="0"></div>
+                    <div class="title-left" flex-box="0"><img :src="productData&&productData.image" /></div>
                     <div class="title-right" flex-box="1">
-                        <h2>通过王</h2>
-                        <p><span class="fc-gold">120.8万</span>人申请 * <span class="fc-gold">30分钟</span>放款</p>
+                        <h2>{{productData&&productData.name}}</h2>
+                        <p><span class="fc-gold">{{productData&&productData.allow_apply}}万</span>人申请 * <span class="fc-gold">30分钟</span>放款</p>
                     </div>
                 </div>
                 <div class="title-bottom"><i class="icon-pass fc-gold"></i>芝麻分 580 秒下款</div>
@@ -20,15 +20,27 @@
                     <div class="info-flex" flex="box:mean">
                         <div>
                             <p class="fc-gray">日利率（%）</p>
-                            <p>0.02%</p>
+                            <p>{{productData&&productData.rate}}%</p>
                         </div>
                         <div>
-                            <p><span class="fc-gray">额度查询：</span>1500-20000</p>
-                            <p><span class="fc-gray">期限范围：</span>7-30天</p>
+                            <p><span class="fc-gray">额度查询：</span>{{productData&&productData.quota_min}}-{{productData&&productData.quota_max}}</p>
+                            <p><span class="fc-gray">期限范围：</span>{{productData&&productData.deadline_min}}-{{productData&&productData.deadline_max}}天</p>
                         </div>
                     </div>
                 </div>
                 <div class="info-item">
+                    <h2><i class="icon-dot"></i>申请资格</h2>
+                    <div v-html="productData&&productData.qualifycontent"></div>
+                </div>
+                <div class="info-item">
+                    <h2><i class="icon-dot"></i>申请资料</h2>
+                    <div v-html="productData&&productData.materialcontent"></div>
+                </div>
+                <div class="info-item">
+                    <h2><i class="icon-dot"></i>产品介绍</h2>
+                    <div v-html="productData&&productData.introcontent"></div>
+                </div>
+                <!--<div class="info-item">
                     <h2><i class="icon-dot"></i>申请资格</h2>
                     <p>1、年龄：满20-30周岁中国大陆公民</p>
                     <p>2、地区：河南、山东、西藏、内蒙古、港澳台地区除外</p>
@@ -51,7 +63,7 @@
                     <p>1、审核方式：线上自动审核加人工辅助</p>
                     <p>2、审核放款时间：1分钟</p>
                     <p>3、还款方式：银行代扣或手动还款</p>
-                </div>
+                </div>-->
             </div>
             <div class="btn-box">
                 <mt-button type="primary" @click="getOpen">立即申请</mt-button>
@@ -94,6 +106,7 @@
     export default {
         data() {
             return {
+                productData:null,
                 mobile:null,
                 show:false,
                 captchaImg:null,
@@ -116,7 +129,7 @@
                 }
 
                 fetch('loanProductDetail', postData).then(response => {
-
+                    self.productData = response.data;
                 }).catch((error) => {
 
                 })
