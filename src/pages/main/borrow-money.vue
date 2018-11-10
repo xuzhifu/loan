@@ -8,7 +8,7 @@
             <div class="ui-borrow-info" flex="dir:top main:justify">
                 <div class="ui-title-box">
                     <div class="cell-title">预计可借金额(元)</div>
-                    <div class="cell-number">{{mustData.allow_apply}}</div>
+                    <div class="cell-number">{{productData&&productData.allow_apply}}</div>
                 </div>
                 <div class="ui-step">
                     <ul flex="main:justify">
@@ -60,8 +60,7 @@
         name: "borrow-money",
         data() {
             return {
-                mustData:null,
-
+                productData:null,
             };
         },
         mounted() {
@@ -74,7 +73,7 @@
                 let postData = {
                 }
                 fetch('borrowMoney', {}).then(response => {
-                    self.mustData = response.data;
+                    self.productData = response.data;
                 }).catch((error) => {
 
                 })
