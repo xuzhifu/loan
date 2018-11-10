@@ -10,6 +10,7 @@ import fetch from './config/fetch' // 加载公共组件
 import * as components from './components/' // 加载公共组件
 import mixins from './config/mixins/common' // 全局方法变量等
 // 公共插件
+import './config/flex'
 import VueKeepScrollPosition from 'vue-keep-scroll-position' // 路由界面缓存
 import FastClick from 'fastclick'
 import underscore from 'underscore' // 函数式编程

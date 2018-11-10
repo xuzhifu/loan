@@ -61,3 +61,12 @@
 @z-index-header: 6;
 @z-index-higher: 8;
 @z-index-highest: 10;
+
+
+.rem(@name, @px) {
+    @{name}: unit(@px / 75, rem);
+}
+
+.fill(@name, @top:0, @right:0, @bottom:0, @left:0){
+    @{name}: unit(@top / 75, rem) unit(@right / 75, rem) unit(@bottom / 75, rem) unit(@left / 75, rem)
+}
