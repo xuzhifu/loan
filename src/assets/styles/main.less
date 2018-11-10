@@ -30,9 +30,10 @@
 
 
 
-    .item-box{margin:10px 0;
+    .item-box{
+        .fill(margin, 20,0,20);
         .item-title{
-            margin:0 10px 10px;
+            .fill(margin, 0,10,10,10);
             p{
                 &>i{font-size:18px;margin-right:3px;position:relative;top:-1px;}
                 a{float:right;
@@ -71,12 +72,16 @@
 }
 /* 全部贷款 */
 .loan-box{
-    .filter-box{
-        background:#f2f0f0;padding:15px 10px;
-        .filter-item{overflow:hidden;padding:5px;
-            .filter-title{display:inline-block;padding: 5px 0;margin:5px 0;}
-            .filter-tab{display:inline-block;
-                span{display: inline-block;text-align:center;min-width:75px;padding:5px;margin:5px 6px;border-radius:3px;transition: .1s;background: #fff;
+    .ui-filter-box{
+        background:@color-gray-F0;.fill(padding, 26,20,20,20);
+        .ui-item{
+            overflow:hidden;clear:both;
+            .cell-title{.rem(width, 80);.fill(padding, 14);.rem(line-height, 50);}
+            .ui-option-list{
+                span{
+                    .rem(min-width, 103);.rem(height, 50);.fill(padding, 0,18,0,18);.fill(margin, 14,0,14,30);
+                    border-radius:@border-radius-4;transition:all .25s;background:@color-white;.rem(line-height, 50);text-align:center;
+                    &:first-child{.fill(margin, 14,0,14);}
                     &.active{background: @color-orange-number;color:#fff;}
                 }
             }
@@ -85,19 +90,19 @@
     .banner-box{
         img{width:100%;}
     }
-    .loan-list{padding:10px 15px 5px;
-        .loan-item{border:1px solid #f4f3f3;box-shadow:0px 0px 10px #ddd;margin:5px 0;
-            .loan-left{padding:10px;background:#fff;
-                .loan-top{margin:10px 0;
+    .loan-list{.fill(padding, 20, 30, 10);
+        .loan-item{border:1px solid #f4f3f3;box-shadow:0px 0px 10px #ddd;.fill(margin, 10,0,10);
+            .loan-left{.fill(padding, 20,20,20,20);background:#fff;
+                .loan-top{.fill(margin, 10,0,10);
                     .img{
-                        width:50px;height:50px;/*background:#f4c249;*/margin:0 15px;
+                        width:50px;height:50px;.fill(margin, 0,30,0,30);
                         img{
                             width:100%;
                         }
                     }
                     .loan-title{margin-left:10px;
                         h2{font-size:16px;margin-bottom:10px;}
-                        span{color:#fff;background:@color-orange;padding:2px 5px;border-radius:3px;font-size:12px;}
+                        span{color:#fff;background:@color-orange;.fill(padding, 4,10,4,10);border-radius:3px;font-size:12px;}
                     }
                 }
                 .loan-bottom{font-size:12px;
@@ -109,12 +114,12 @@
             .loan-right{background:#fbfbfb;font-size:12px;text-align:center;
                 &>div{
                     &>p{margin-bottom:20px;}
-                    .mint-button{background-color: #f4c249;font-size:14px;border-radius:20px;padding:5px 20px;color:#fff;height:auto;}
+                    .mint-button{background-color: #f4c249;font-size:14px;border-radius:20px;.fill(padding, 10,40,10,40);color:#fff;height:auto;}
                 }
             }
         }
     }
-    .recommend-box{padding: 10px;border: 1px solid #f4f3f3;box-shadow: 0px 0px 10px #ddd;margin: 0 15px;
+    .recommend-box{.fill(padding, 20,20,20,20);border: 1px solid #f4f3f3;box-shadow: 0px 0px 10px #ddd;.fill(margin, 0,30,0,30);
         .recommend-title{
             h2{font-size:16px;
                 i{font-size: 25px;color: #F58523;position:relative;top:-2px;left:3px;}
@@ -129,7 +134,7 @@
 .apply-box{
     .title-box{
         .title-top{border-bottom:1px solid #f4f3f3;.fill(padding, 20,6,0,0);
-            .title-left{.rem(width, 100);.rem(height, 100);background:@color-orange-number;margin:10px 15px;border-radius:5px;}
+            .title-left{.rem(width, 100);.rem(height, 100);background:@color-orange-number;.fill(margin, 20,30,20,30);border-radius:5px;}
             .title-right{
                 h2{font-size:18px;.rem(line-height, 86);}
                 p{font-size:12px;}
@@ -141,7 +146,7 @@
         }
     }
     .info-box{background:#f6f6f6;.fill(padding, 10,20,10,20);
-        .info-item{background:#fff;margin:5px 0;.fill(padding, 20,50,20,50);
+        .info-item{background:#fff;.fill(margin, 10,0,10,0);.fill(padding, 20,50,20,50);
             h2{font-size:16px;.rem(line-height, 60);position:relative;
                 i{position:absolute;left:-23px;font-size:25px;color:@color-orange-number;}
             }
@@ -156,7 +161,7 @@
 .ui-borrow-money-box{
     .ui-info-box{.fill(padding, 28,0,20,0);background-color:@color-gray-E1;}
     .ui-borrow-info{
-        .rem(height, 384);margin:15px 10px;.fill(padding, 120);background:url(../../assets/img/borrow-money.png) no-repeat;background-size:cover;
+        .rem(height, 384);.fill(margin, 30,20,30,20);.fill(padding, 120);background:url(../../assets/img/borrow-money.png) no-repeat;background-size:cover;
         .cell-title{font-size:15px;color:@color-gray-66;.rem(line-height, 60);text-align:center;}
         .cell-number{font-size:24px;font-weight:700;color:@color-gray-66;.rem(line-height, 60);text-align:center;}
     }
@@ -203,9 +208,9 @@
         span{color:@color-orange-number;font-size:16px;margin-left:20px;}
     }
     .link-box{
-        .link-list{margin:20px 10px;background:#fff;font-size:14px;
-            a{display:block;.rem(line-height, 110);border:1px solid #eee;.fill(padding, 0,30,0,50);box-shadow:0 0 10px #eee;margin:5px 0;
-                &>i:first-child{font-size:25px;margin-right:30px;}
+        .link-list{.fill(margin, 30,20,30,20);background:#fff;font-size:14px;
+            a{display:block;.rem(line-height, 110);border:1px solid #eee;.fill(padding, 0,30,0,50);box-shadow:0 0 10px #eee;.fill(margin, 10,0,10,0);
+                &>i:first-child{font-size:25px;.fill(margin, 0,30,0,0);}
                 &>i:last-child{float:right;color:#d6d1cf;font-size:20px;}
             }
         }
@@ -219,7 +224,7 @@
             i{position:absolute;top:12px;right:12px;color:#eaeaea;}
         }
         .form-box{.fill(padding, 40,30,20,0);
-            .input-box{border:1px solid #f2f2f2;margin-bottom:15px;.rem(height, 80);
+            .input-box{border:1px solid #f2f2f2;.fill(margin, 0,30,0,0);.rem(height, 80);
                 .mint-cell{.rem(min-height, 80);
                     .mint-cell-wrapper{background-image:none;padding:0;}
                     &:last-child{background-image:none;}
@@ -231,14 +236,14 @@
                         border:1px solid #f2f2f2;
                         .mint-cell-wrapper{.fill(padding, 0,20,0,20);}
                     }
-                    .code{color:#ff8820;border:1px solid #f2f2f2;border-radius:30px;margin-left:30px;text-align:center;.rem(line-height, 74);
+                    .code{color:#ff8820;border:1px solid #f2f2f2;border-radius:30px;.fill(margin, 0,0,0,30);text-align:center;.rem(line-height, 74);
                         img{height:100%;width:100%;}
                     }
                 }
             }
         }
         .ui-button-box{
-            margin:10px 0 25px;
+            .fill(margin, 20,0,50,0);
         }
     }
 }

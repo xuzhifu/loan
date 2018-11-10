@@ -4,20 +4,27 @@
 
 <template>
     <div class="loan-box">
-        <div class="filter-box">
-            <div class="filter-item">
-                <span class="filter-title">类型：</span>
-                <span class="filter-tab">
+        <div class="ui-filter-box">
+
+
+            <div class="ui-item" flex="">
+                <div class="cell-title" flex="flex-box-0">类型：</div>
+                <div class="ui-option-list" flex="dir-left flex-box-1">
                     <span :class="{ active: item.active }" @click="getCategoryHandle(index)" v-for="(item, index) in category" :key="index" >{{ item.name }}</span>
-                </span>
+                </div>
             </div>
-            <div class="filter-item">
-                <span class="filter-title">身份：</span>
-                <span class="filter-tab">
+
+
+
+            <div class="ui-item" flex="">
+                <div class="cell-title" flex="flex-box-0">身份：</div>
+                <div class="ui-option-list" flex="dir-left flex-box-1">
                     <span :class="{ active: item.active }" @click="getReclistHandle(index)" v-for="(item, index) in reclist" :key="index" >{{ item.name }}</span>
-                </span>
+                </div>
             </div>
         </div>
+
+
         <div class="loan-list">
             <div class="loan-item" flex="dir:left box:first" v-for="(item, index) in loanProduct" :key="index">
                 <div class="loan-left">
