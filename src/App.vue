@@ -27,7 +27,7 @@
                     </router-link>
                 </mt-tab-item>
                 <mt-tab-item id="tab3">
-                    <router-link to="/apply">
+                    <router-link to="/borrow-money">
                         <i class="icon-wallet"></i><p>一定借到钱</p>
                     </router-link>
                 </mt-tab-item>
