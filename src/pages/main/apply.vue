@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="btn-box">
-                <mt-button type="primary" @click="getApply">立即申请</mt-button>
+                <mt-button type="primary" @click="getOpen">立即申请</mt-button>
             </div>
         </div>
         <div class="dialog-box" v-if="show">
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="ui-button-box" flex="main:center">
-                    <button class="cell-button-orange">马上拿钱</button>
+                    <button class="cell-button-orange" @click="getApply">马上拿钱</button>
                 </div>
             </div>
         </div>
@@ -105,18 +105,45 @@
         methods: {
             init(){
                 let self = this;
+                let postData = {
+                    product_id:88
+                }
+                fetch('loanProductDetail', postData).then(response => {
+
+                }).catch(function (error) {})
             },
             getCodeImg(){
+                let postData = {
+                }
+                fetch('imageCode', postData).then(response => {
 
+                }).catch(function (error) {})
             },
             getCode(){
+                let postData = {
+                    mobile:13688888888,
+                    event:'mobilelogin',
+                    icaptcha:'b38k',
+                }
+                fetch('SMSCode', postData).then(response => {
 
+                }).catch(function (error) {})
             },
             getClose(){
                 this.show = false;
             },
-            getApply(){
+            getOpen(){
                 this.show = true;
+
+            },
+            getApply(){
+                let postData = {
+                    mobile:13688888888,
+                    scaptcha:1234,
+                }
+                fetch('login', postData).then(response => {
+
+                }).catch(function (error) {})
             }
         },
     };

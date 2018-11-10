@@ -57,7 +57,22 @@
 
 <script>
     export default {
-        name: "borrow-money"
+        name: "borrow-money",
+        mounted() {
+            let self = this;
+            self.init();
+        },
+        methods: {
+            init(){
+                let self = this;
+                let postData = {
+                }
+                fetch('borrowMoney', {}).then(response => {
+
+                }).catch(function (error) {})
+            },
+
+        },
     }
 </script>
 

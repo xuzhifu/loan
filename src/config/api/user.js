@@ -20,11 +20,11 @@ export default {
     },
     // 获取贷款产品详情
     loanProductDetail(params) {
-        return {method: 'post', url: '/product/detail', params: params}
+        return {method: 'get', url: '/product/detail', params: params}
     },
     // 获取“一定借到钱”贷款产品
     borrowMoney(params) {
-        return {method: 'post', url: '/product/must', params: params}
+        return {method: 'get', url: '/product/must', params: params}
     },
     // 获取"全部贷款"的筛选条件
     productFilter(params) {
@@ -35,14 +35,14 @@ export default {
 
     // 获取短信验证码
     SMSCode(params) {
-        return {method: 'post', url: '/sms/send', params: params}
+        return {method: 'get', url: '/sms/send', params: params}
     },
     // 获取图形验证码
     imageCode(params) {
-        return {method: 'post', url: '/captcha/index', params: params}
+        return {method: 'get', url: '/captcha/index', params: params}
     },
     // 用户通过手机登录
     login(params) {
-        return {method: 'post', url: '/user/mobilelogin', params: params}
+        return {method: 'get', url: '/user/mobilelogin', params: params}
     },
 }
