@@ -47,19 +47,11 @@
     export default {
         data () {
             return {
-                selected: 'tab1',
-            }
-        },
-        watch: {
-            selected: function (val, oldVal) {
-                /*let self = this
-                // 这里就可以通过 val 的值变更来确定
-                console.log(val);
-                console.log(oldVal);*/
+
             }
         },
         mounted () {
-            let self = this;
+            let self = this
         },
         methods: {
 

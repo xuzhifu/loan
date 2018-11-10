@@ -63,14 +63,14 @@
                 <div class="form-box">
                     <div class="input-box" flex="">
                         <p flex-box="0" flex="cross:center main:center" style="width:50px"><i class="icon-input icon-phone"></i></p>
-                        <p flex-box="1"><mt-field label="" placeholder="请填写手机号" v-model="demo"></mt-field></p>
+                        <p flex-box="1"><mt-field label="" placeholder="请填写手机号" v-model="mobile"></mt-field></p>
                     </div>
                     <div class="input-box input-code" flex="box:mean">
-                        <mt-field label="" placeholder="请输入图形验证码" v-model="demo"></mt-field>
-                        <p class="code"><img src="../../assets/img/banner.jpg" @click="getCodeImg"></p>
+                        <mt-field label="" placeholder="请输入图形验证码" v-model="captcha"></mt-field>
+                        <p class="code"><img :src="captchaImg" @click="getCodeImg" v-if="captchaImg"></p>
                     </div>
                     <div class="input-box input-code" flex="box:mean">
-                        <mt-field label="" placeholder="请输入短信验证码" v-model="demo"></mt-field>
+                        <mt-field label="" placeholder="请输入短信验证码" v-model="SMSCode"></mt-field>
                         <p class="code fc-gold" @click="getCode">
                             <span v-if="true">获取验证码</span>
                             <span v-else>59s</span>
@@ -94,8 +94,11 @@
     export default {
         data() {
             return {
-                demo:null,
+                mobile:null,
                 show:false,
+                captchaImg:null,
+                captcha:null,
+                SMSCode:null,
             };
         },
         mounted() {
@@ -106,40 +109,45 @@
             init(){
                 let self = this;
                 let postData = {
-                    product_id:88
+                    product_id:1
                 }
                 fetch('loanProductDetail', postData).then(response => {
 
                 }).catch(function (error) {})
             },
             getCodeImg(){
+                let self = this;
                 let postData = {
                 }
                 fetch('imageCode', postData).then(response => {
-
+                    self.captchaImg = response.data.captcha;
                 }).catch(function (error) {})
             },
             getCode(){
+                let self = this;
                 let postData = {
-                    mobile:13688888888,
+                    mobile:self.mobile,
                     event:'mobilelogin',
-                    icaptcha:'b38k',
+                    icaptcha:self.icaptcha,
                 }
                 fetch('SMSCode', postData).then(response => {
 
                 }).catch(function (error) {})
             },
             getClose(){
-                this.show = false;
+                let self = this;
+                self.show = false;
             },
             getOpen(){
-                this.show = true;
-
+                let self = this;
+                self.show = true;
+                self.getCodeImg();
             },
             getApply(){
+                let self = this;
                 let postData = {
-                    mobile:13688888888,
-                    scaptcha:1234,
+                    mobile:self.mobile,
+                    icaptcha:self.icaptcha,
                 }
                 fetch('login', postData).then(response => {
 
